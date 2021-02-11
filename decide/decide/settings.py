@@ -153,10 +153,17 @@ STATIC_URL = '/static/'
 # number of bits for the key, all auths should use the same number of bits
 KEYBITS = 256
 
+BASEURL = 'https://prueba-examen-joscorfis.herokuapp.com/'
+
 try:
     from local_settings import *
 except ImportError:
     print("local_settings.py not found")
 
+
+APIS = {}
+
+import django_heroku
+django_heroku.settings(locals())
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
